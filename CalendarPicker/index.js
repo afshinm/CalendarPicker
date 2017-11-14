@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {
+  I18nManager,
   View,
   Text,
   Dimensions,
@@ -30,6 +31,7 @@ export default class CalendarPicker extends Component {
       selectedStartDate: null,
       selectedEndDate: null,
       styles: {},
+      isRTL: true,
     };
     this.updateScaledStyles = this.updateScaledStyles.bind(this);
     this.updateMonthYear = this.updateMonthYear.bind(this);
@@ -43,6 +45,9 @@ export default class CalendarPicker extends Component {
     initialDate: moment(),
     scaleFactor: 375,
   }
+    componentDidMount(){
+        I18nManager.forceRTL(true)
+    }
 
   componentWillMount() {
     this.setState({...this.updateScaledStyles(this.props), ...this.updateMonthYear(this.props)});
