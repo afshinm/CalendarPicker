@@ -7,6 +7,7 @@ node_modules/**/*
 
 # Xcode
 build/
+.idea
 *.pbxuser
 !default.pbxuser
 *.mode1v3
