@@ -4,6 +4,7 @@ import {
   Text,
   Dimensions,
   StyleSheet,
+  I18nManager,
 } from 'react-native';
 import { makeStyles } from './makeStyles';
 import { Utils } from './Utils';
@@ -30,6 +31,7 @@ export default class CalendarPicker extends Component {
       selectedStartDate: null,
       selectedEndDate: null,
       styles: {},
+      isRTL: true
     };
     this.updateScaledStyles = this.updateScaledStyles.bind(this);
     this.updateMonthYear = this.updateMonthYear.bind(this);
@@ -42,6 +44,10 @@ export default class CalendarPicker extends Component {
   static defaultProps = {
     initialDate: moment(),
     scaleFactor: 375,
+  }
+
+  componentDidMount(){
+      I18nManager.forceRTL(true);
   }
 
   componentWillMount() {
