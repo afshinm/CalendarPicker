@@ -31,7 +31,6 @@ export default class CalendarPicker extends Component {
       selectedStartDate: null,
       selectedEndDate: null,
       styles: {},
-      isRTL: true
     };
     this.updateScaledStyles = this.updateScaledStyles.bind(this);
     this.updateMonthYear = this.updateMonthYear.bind(this);
@@ -46,8 +45,17 @@ export default class CalendarPicker extends Component {
     scaleFactor: 375,
   }
 
-  componentDidMount(){
-      I18nManager.forceRTL(true);
+  componentWillUpdate() {
+      const {
+          isRTL,
+      } = this.props;
+      if (isRTL == null){
+          I18nManager.forceRTL(false);
+
+      }
+      else {
+          I18nManager.forceRTL(isRTL);
+      }
   }
 
   componentWillMount() {
@@ -184,6 +192,7 @@ export default class CalendarPicker extends Component {
     } = this.state;
 
     const {
+      isRTL,
       allowRangeSelection,
       startFromMonday,
       initialDate,
@@ -227,6 +236,7 @@ export default class CalendarPicker extends Component {
             onPressDay={this.handleOnPressDay}
             startFromMonday={startFromMonday}
             allowRangeSelection={allowRangeSelection}
+            isRTL={isRTL}
             selectedStartDate={selectedStartDate}
             selectedEndDate={selectedEndDate}
             minDate={minDate && minDate.setHours(0,0,0,0)}
