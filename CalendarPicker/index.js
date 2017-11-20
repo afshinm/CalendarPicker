@@ -4,7 +4,6 @@ import {
   Text,
   Dimensions,
   StyleSheet,
-  I18nManager,
 } from 'react-native';
 import { makeStyles } from './makeStyles';
 import { Utils } from './Utils';
@@ -43,19 +42,6 @@ export default class CalendarPicker extends Component {
   static defaultProps = {
     initialDate: moment(),
     scaleFactor: 375,
-  }
-
-  componentWillUpdate() {
-      const {
-          isRTL,
-      } = this.props;
-      if (isRTL == null){
-          I18nManager.forceRTL(false);
-
-      }
-      else {
-          I18nManager.forceRTL(isRTL);
-      }
   }
 
   componentWillMount() {
@@ -192,7 +178,6 @@ export default class CalendarPicker extends Component {
     } = this.state;
 
     const {
-      isRTL,
       allowRangeSelection,
       startFromMonday,
       initialDate,
@@ -236,7 +221,6 @@ export default class CalendarPicker extends Component {
             onPressDay={this.handleOnPressDay}
             startFromMonday={startFromMonday}
             allowRangeSelection={allowRangeSelection}
-            isRTL={isRTL}
             selectedStartDate={selectedStartDate}
             selectedEndDate={selectedEndDate}
             minDate={minDate && minDate.setHours(0,0,0,0)}

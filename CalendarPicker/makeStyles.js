@@ -38,7 +38,7 @@ export function makeStyles(scaler, backgroundColor, textColor, todayBackgroundCo
         },
 
         dayLabelsWrapper: {
-            flexDirection: 'row',
+            flexDirection: 'row-reverse',
             marginBottom: 10 * scaler,
             borderBottomWidth: 1,
             borderTopWidth: 1,
@@ -137,7 +137,7 @@ export function makeStyles(scaler, backgroundColor, textColor, todayBackgroundCo
 
         headerWrapper: {
             alignItems: 'center',
-            flexDirection: 'row',
+            flexDirection: 'row-reverse',
             alignSelf: 'center',
             marginBottom: 10 * scaler,
             padding: 5 * scaler,
@@ -171,7 +171,7 @@ export function makeStyles(scaler, backgroundColor, textColor, todayBackgroundCo
         },
 
         weekRow: {
-            flexDirection: 'row'
+            flexDirection: 'row-reverse'
         },
 
         disabledText: {
