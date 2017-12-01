@@ -1,4 +1,6 @@
 node_modules/
+.idea/
+.idea/workspace.xml
 .expo/
 npm-debug.*
 .DS_Store
@@ -23,3 +25,4 @@ DerivedData
 *.ipa
 *.xcuserstate
 >>>>>>> origin/master
+.idea/inspectionProfiles/
